@@ -17,6 +17,9 @@
 </head>
 <body>
 
+  <!-- ==================== نشانگر پیشرفت مطالعه (Reading Progress Bar) ==================== -->
+  <div class="reading-progress-bar" id="readingProgress"></div>
+
   <!-- ==================== پس‌زمینه نوری (Glow Background) ==================== -->
   <div class="global-bg" aria-hidden="true">
     <div class="glow glow-top-left"></div>
@@ -24,6 +27,11 @@
     <div class="glow glow-bottom-left"></div>
     <div class="glow glow-bottom-right"></div>
   </div>
+
+  <!-- ==================== دکمه بازگشت به بالا ==================== -->
+  <button class="back-to-top" id="backToTop" aria-label="بازگشت به بالا">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- ==================== هدر ==================== -->
   <header class="site-header">
@@ -54,6 +62,11 @@
 
       <!-- بخش چپ: دکمه‌ها -->
       <div class="header-actions">
+        <!-- دکمه حالت تاریک / روشن -->
+        <button class="btn-theme" id="themeToggle" aria-label="تغییر حالت تاریک/روشن">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        
         <button class="btn-search" aria-label="جستجو">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -118,12 +131,22 @@
             <div class="slide-overlay">
               <div class="slide-top">
                 <span class="badge badge-green">سیاست</span>
-                <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
+                  <!-- دکمه ذخیره خبر در اسلایدر -->
+                  <button class="bookmark-btn" aria-label="ذخیره خبر">
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                </div>
               </div>
               <div class="slide-content">
                 <h2 class="slide-title">رهبر انقلاب: جوانان، امید اصلی آینده کشور هستند</h2>
                 <p class="slide-lead">حضرت آیت‌الله خامنه‌ای در دیدار دانشجویان، با تاکید بر نقش جوانان در پیشرفت کشور، فرمودند: آینده از آنِ شماست...</p>
-                <a href="#" class="btn-read-more">بخونش <i class="fa-solid fa-arrow-left"></i></a>
+                <div class="slide-meta-row">
+                  <!-- زمان مطالعه -->
+                  <span class="read-time"><i class="fa-solid fa-book-open-reader"></i> ۴ دقیقه مطالعه</span>
+                  <a href="#" class="btn-read-more">بخونش <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
               </div>
             </div>
           </article>
@@ -134,12 +157,20 @@
             <div class="slide-overlay">
               <div class="slide-top">
                 <span class="badge badge-purple">علم و فناوری</span>
-                <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
+                  <button class="bookmark-btn" aria-label="ذخیره خبر">
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                </div>
               </div>
               <div class="slide-content">
                 <h2 class="slide-title">رونمایی از تراشه ایرانی «کوله‌چیپ»؛ گامی بلند در خودکفایی</h2>
                 <p class="slide-lead">متخصصان داخلی موفق به طراحی و تولید نسل جدید پردازنده‌های بومی شدند که کارایی آن با نمونه‌های خارجی برابری می‌کند.</p>
-                <a href="#" class="btn-read-more">بخونش <i class="fa-solid fa-arrow-left"></i></a>
+                <div class="slide-meta-row">
+                  <span class="read-time"><i class="fa-solid fa-book-open-reader"></i> ۷ دقیقه مطالعه</span>
+                  <a href="#" class="btn-read-more">بخونش <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
               </div>
             </div>
           </article>
@@ -150,12 +181,20 @@
             <div class="slide-overlay">
               <div class="slide-top">
                 <span class="badge badge-purple">اقتصاد</span>
-                <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
+                  <button class="bookmark-btn" aria-label="ذخیره خبر">
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                </div>
               </div>
               <div class="slide-content">
                 <h2 class="slide-title">رشد ۸ درصدی شاخص بورس؛ بازگشت اعتماد سرمایه‌گذاران</h2>
                 <p class="slide-lead">پس از سه هفته نوسان، شاخص کل بورس با رشد چشمگیر به کانال جدید وارد شد و ارزش معاملات ۲ برابر شد.</p>
-                <a href="#" class="btn-read-more">بخونش <i class="fa-solid fa-arrow-left"></i></a>
+                <div class="slide-meta-row">
+                  <span class="read-time"><i class="fa-solid fa-book-open-reader"></i> ۵ دقیقه مطالعه</span>
+                  <a href="#" class="btn-read-more">بخونش <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
               </div>
             </div>
           </article>
@@ -187,12 +226,17 @@
           <div class="card-img-wrap">
             <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=400&q=80" alt="خبر" />
             <span class="card-tag tag-purple">تکنولوژی</span>
+            <!-- دکمه ذخیره در کارت‌های فرعی -->
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر">
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
           </div>
           <div class="card-content">
             <h3>معرفی گوشی جدید سامسونگ با امکانات شگفت‌انگیز</h3>
             <div class="card-meta">
               <span><i class="fa-regular fa-clock"></i> ۲ ساعت پیش</span>
               <span><i class="fa-regular fa-eye"></i> ۱۲.۵K</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۳ دقیقه</span>
             </div>
           </div>
         </article>
@@ -201,12 +245,16 @@
           <div class="card-img-wrap">
             <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=400&q=80" alt="خبر" />
             <span class="card-tag tag-green">ورزش</span>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر">
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
           </div>
           <div class="card-content">
             <h3>پیروزی مقتدرانه تیم ملی در دیدار دوستانه</h3>
             <div class="card-meta">
               <span><i class="fa-regular fa-clock"></i> ۳ ساعت پیش</span>
               <span><i class="fa-regular fa-eye"></i> ۸.۷K</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۲ دقیقه</span>
             </div>
           </div>
         </article>
@@ -215,12 +263,16 @@
           <div class="card-img-wrap">
             <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=400&q=80" alt="خبر" />
             <span class="card-tag tag-orange">علم و فناوری</span>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر">
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
           </div>
           <div class="card-content">
             <h3>ماموریت جدید ناسا به سوی مریخ آغاز شد</h3>
             <div class="card-meta">
               <span><i class="fa-regular fa-clock"></i> ۴ ساعت پیش</span>
               <span><i class="fa-regular fa-eye"></i> ۶.۹K</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۶ دقیقه</span>
             </div>
           </div>
         </article>

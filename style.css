@@ -1,5 +1,5 @@
 /* ============================================================
-   متغیرهای رنگی و تنظیمات پایه
+   متغیرهای رنگی و تنظیمات پایه (تم روشن)
    ============================================================ */
 :root {
   --navy: #0b1a33;
@@ -12,6 +12,11 @@
   --text-main: #1e293b;
   --text-muted: #64748b;
   --border-color: #e2e8f0;
+  --header-bg: rgba(255, 255, 255, 0.7);
+  --header-border: rgba(255, 255, 255, 0.5);
+  --card-bg: var(--white);
+  --glow-opacity: 0.3;
+  
   --radius-lg: 16px;
   --radius-md: 12px;
   --radius-pill: 50px;
@@ -20,10 +25,33 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ============================================================
+   تم تاریک (Dark Mode)
+   ============================================================ */
+body.dark-mode {
+  --bg-body: #060f21; /* سرمه‌ای خیلی عمیق */
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-color: #1e293b;
+  --header-bg: rgba(11, 26, 51, 0.85);
+  --header-border: rgba(255, 255, 255, 0.05);
+  --card-bg: #112240;
+  --glow-opacity: 0.15; /* هاله‌ها در تاریکی ملایم‌تر میشن */
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+/* ============================================================
+   تنظیمات پایه
+   ============================================================ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -33,6 +61,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -49,6 +78,62 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================================
+   نشانگر پیشرفت مطالعه (Reading Progress)
+   ============================================================ */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--green-neon), var(--purple));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+/* ============================================================
+   دکمه بازگشت به بالا (Back to Top)
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(11, 26, 51, 0.3);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--green-neon);
+  color: var(--navy);
+  box-shadow: 0 6px 20px rgba(74, 222, 128, 0.5);
+}
+
+body.dark-mode .back-to-top {
+  background: var(--green-neon);
+  color: var(--navy);
+}
+
+/* ============================================================
    پس‌زمینه نوری متحرک (Animated Global Glow Background)
    ============================================================ */
 .global-bg {
@@ -59,20 +144,25 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
   background-color: var(--bg-body);
   background-image: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #f5f3ff 100%);
+  transition: background 0.4s ease;
+}
+
+body.dark-mode .global-bg {
+  background-image: linear-gradient(135deg, #060f21 0%, #0b1a33 50%, #1a103c 100%);
 }
 
 .glow {
   position: absolute;
   border-radius: 50%;
-  /* کاهش بلور برای مشخص شدن شکل دایره */
   filter: blur(40px);
   will-change: transform, opacity;
+  opacity: var(--glow-opacity); /* وابسته به تم */
 }
 
 /* --- هاله سبز ۱ --- */
 .glow-top-left {
   width: 500px; height: 500px;
-  background-color: rgba(74, 222, 128, 0.3); 
+  background-color: rgba(74, 222, 128, 0.8); 
   top: 10%; left: 10%;
   animation: 
     randomMove1 30s ease-in-out infinite alternate,
@@ -82,7 +172,7 @@ img { display: block; max-width: 100%; }
 /* --- هاله بنفش ۱ --- */
 .glow-top-right {
   width: 450px; height: 450px;
-  background-color: rgba(167, 139, 250, 0.25); 
+  background-color: rgba(167, 139, 250, 0.8); 
   top: 10%; right: 10%;
   animation: 
     randomMove2 35s ease-in-out infinite alternate,
@@ -92,7 +182,7 @@ img { display: block; max-width: 100%; }
 /* --- هاله بنفش ۲ --- */
 .glow-bottom-left {
   width: 600px; height: 600px;
-  background-color: rgba(167, 139, 250, 0.2); 
+  background-color: rgba(167, 139, 250, 0.7); 
   bottom: 10%; left: 10%;
   animation: 
     randomMove3 40s ease-in-out infinite alternate,
@@ -102,7 +192,7 @@ img { display: block; max-width: 100%; }
 /* --- هاله سبز ۲ --- */
 .glow-bottom-right {
   width: 550px; height: 550px;
-  background-color: rgba(74, 222, 128, 0.25); 
+  background-color: rgba(74, 222, 128, 0.7); 
   bottom: 10%; right: 10%;
   animation: 
     randomMove4 32s ease-in-out infinite alternate,
@@ -144,9 +234,6 @@ img { display: block; max-width: 100%; }
   100% { transform: translate(-60vw, -20vh) scale(1); }
 }
 
-/* ============================================================
-   انیمیشن نفس کشیدن (کم‌رنگ و پررنگ شدن)
-   ============================================================ */
 @keyframes breathe {
   0% { opacity: 0.3; }
   50% { opacity: 0.6; }
@@ -160,11 +247,12 @@ img { display: block; max-width: 100%; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid var(--header-border);
   padding: 12px 0;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .header-inner {
@@ -198,6 +286,10 @@ img { display: block; max-width: 100%; }
   line-height: 1.2;
 }
 
+body.dark-mode .brand-name {
+  color: var(--white);
+}
+
 .brand-tag {
   font-size: 11px;
   font-weight: 500;
@@ -208,11 +300,12 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 4px;
-  background: var(--white);
+  background: var(--card-bg);
   padding: 6px;
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-color);
+  transition: background-color 0.4s ease;
 }
 
 .nav-item {
@@ -227,20 +320,50 @@ img { display: block; max-width: 100%; }
   gap: 6px;
 }
 
-.nav-item:hover { background: #f1f5f9; }
+.nav-item:hover { background: rgba(100, 116, 139, 0.1); }
 .nav-item.active { background: var(--navy); color: var(--white); }
+
+body.dark-mode .nav-item.active {
+  background: var(--green-neon);
+  color: var(--navy);
+}
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+}
+
+/* دکمه حالت تاریک */
+.btn-theme {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.btn-theme:hover {
+  background: #f1f5f9;
+  color: var(--purple);
+}
+
+body.dark-mode .btn-theme:hover {
+  background: var(--navy);
+  color: var(--green-neon);
 }
 
 .btn-search {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
   color: var(--text-main);
   font-size: 16px;
@@ -384,9 +507,13 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: color 0.4s ease;
 }
 
-/* انیمیشن گرادیان متحرک روی متن */
+body.dark-mode .hero-title {
+  color: var(--white);
+}
+
 .grad-text {
   background: linear-gradient(90deg, #22c55e, #8b5cf6, #22c55e);
   background-size: 200% auto;
@@ -422,7 +549,7 @@ img { display: block; max-width: 100%; }
 }
 
 .tab {
-  background: var(--white);
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
   color: var(--text-main);
   font-size: 13.5px;
@@ -436,15 +563,8 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--shadow-sm);
 }
 
-.tab i {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.tab:hover {
-  border-color: var(--green-neon);
-  transform: translateY(-2px);
-}
+.tab i { font-size: 12px; color: var(--text-muted); }
+.tab:hover { border-color: var(--green-neon); transform: translateY(-2px); }
 
 .tab.active {
   background: var(--green-neon);
@@ -465,9 +585,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ---------- خبر اصلی (اسلایدر) ---------- */
-.main-story {
-  position: relative;
-}
+.main-story { position: relative; }
 
 .main-slider {
   position: relative;
@@ -486,16 +604,9 @@ img { display: block; max-width: 100%; }
   transition: opacity 0.5s ease;
 }
 
-.slide.active {
-  opacity: 1;
-  visibility: visible;
-}
+.slide.active { opacity: 1; visibility: visible; }
 
-.slide-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.slide-img { width: 100%; height: 100%; object-fit: cover; }
 
 .slide-overlay {
   position: absolute;
@@ -548,6 +659,26 @@ img { display: block; max-width: 100%; }
   line-height: 1.7;
 }
 
+/* ردیف زمان مطالعه و دکمه خواندن در اسلایدر */
+.slide-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.read-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(4px);
+}
+
 .btn-read-more {
   align-self: flex-start;
   background: var(--green-neon);
@@ -559,11 +690,52 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 4px;
   transition: var(--transition);
 }
 
 .btn-read-more:hover { background: var(--white); }
+
+/* دکمه بوکمارک (ذخیره) در اسلایدر */
+.bookmark-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  color: var(--white);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.bookmark-btn:hover {
+  background: var(--white);
+  color: var(--navy);
+  transform: scale(1.1);
+}
+
+.bookmark-btn.saved {
+  background: var(--green-neon);
+  color: var(--navy);
+}
+
+.bookmark-btn.saved i::before {
+  content: "\f02e"; /* آیکون بوکمارک توپر */
+  font-weight: 900;
+}
+
+/* دکمه بوکمارک در کارت‌های فرعی */
+.bookmark-btn--card {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.5);
+}
 
 /* کنترل‌های اسلایدر */
 .slider-controls {
@@ -577,7 +749,7 @@ img { display: block; max-width: 100%; }
 .slider-counter {
   font-size: 16px;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--text-main);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -586,10 +758,7 @@ img { display: block; max-width: 100%; }
 .counter-current { font-size: 20px; }
 .counter-sep { color: var(--text-muted); font-size: 14px; }
 
-.slider-dots {
-  display: flex;
-  gap: 6px;
-}
+.slider-dots { display: flex; gap: 6px; }
 
 .dot {
   width: 8px;
@@ -607,7 +776,7 @@ img { display: block; max-width: 100%; }
 
 /* ---------- اخبار فرعی ---------- */
 .secondary-stories {
-  background: var(--white);
+  background: var(--card-bg);
   border-radius: var(--radius-lg);
   padding: 20px;
   box-shadow: var(--shadow-md);
@@ -615,6 +784,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transition: background-color 0.4s ease;
 }
 
 .secondary-head {
@@ -632,6 +802,10 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+body.dark-mode .secondary-head h2 {
+  color: var(--white);
 }
 
 .secondary-head i { color: var(--green); font-size: 14px; }
@@ -683,6 +857,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0; /* جلوگیری از سرریز شدن */
 }
 
 .card-content h3 {
@@ -699,7 +874,8 @@ img { display: block; max-width: 100%; }
   font-size: 11px;
   color: var(--text-muted);
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  flex-wrap: wrap; /* برای جلوگیری از بهم ریختگی زمان مطالعه */
 }
 
 /* ============================================================
@@ -709,21 +885,18 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: var(--white);
+  background: var(--card-bg);
   margin-top: 32px;
   padding: 16px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+  transition: background-color 0.4s ease;
 }
 
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+.trust-item { display: flex; align-items: center; gap: 12px; }
 
-.trust-icon { font-size: 20px; color: var(--navy); }
+.trust-icon { font-size: 20px; color: var(--text-main); }
 
 .trust-text { display: flex; flex-direction: column; }
 
@@ -732,6 +905,10 @@ img { display: block; max-width: 100%; }
   font-weight: 900;
   color: var(--navy);
   line-height: 1.2;
+}
+
+body.dark-mode .trust-text strong {
+  color: var(--white);
 }
 
 .trust-text span {
@@ -792,20 +969,20 @@ img { display: block; max-width: 100%; }
   }
   .trust-divider { width: 80%; height: 1px; }
   .trust-item { width: 100%; justify-content: flex-start; padding-right: 20px; }
+  
+  .back-to-top { bottom: 20px; left: 20px; width: 44px; height: 44px; }
+  
+  /* دکمه‌های هدر در موبایل */
+  .btn-join { padding: 10px 16px; font-size: 13px; }
+  .btn-theme, .btn-search { width: 40px; height: 40px; }
 }
 
 /* ============================================================
    احترام به تنظیمات کاهش حرکت (Reduced Motion)
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  .glow,
-  .ticker,
-  .pulse-dot,
-  .grad-text {
+  .glow, .ticker, .pulse-dot, .grad-text {
     animation: none !important;
   }
-  .glow {
-    opacity: 0.4;
-    transform: none;
-  }
+  .glow { opacity: 0.4; transform: none; }
 }
