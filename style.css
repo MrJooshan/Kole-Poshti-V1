@@ -45,7 +45,7 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
-  z-index: 10; /* بالاتر از بک‌گراند نوری */
+  z-index: 10;
 }
 
 /* ============================================================
@@ -64,44 +64,45 @@ img { display: block; max-width: 100%; }
 .glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
+  /* کاهش بلور برای مشخص شدن شکل دایره */
+  filter: blur(40px);
   will-change: transform, opacity;
 }
 
-/* --- هاله سبز ۱ (حرکت رندوم در سمت راست و بالا) --- */
+/* --- هاله سبز ۱ --- */
 .glow-top-left {
   width: 500px; height: 500px;
-  background-color: rgba(74, 222, 128, 0.6); /* سبز */
+  background-color: rgba(74, 222, 128, 0.3); 
   top: 10%; left: 10%;
   animation: 
     randomMove1 30s ease-in-out infinite alternate,
     breathe 12s ease-in-out infinite alternate;
 }
 
-/* --- هاله بنفش ۱ (حرکت رندوم در سمت چپ و بالا) --- */
+/* --- هاله بنفش ۱ --- */
 .glow-top-right {
   width: 450px; height: 450px;
-  background-color: rgba(167, 139, 250, 0.5); /* بنفش */
+  background-color: rgba(167, 139, 250, 0.25); 
   top: 10%; right: 10%;
   animation: 
     randomMove2 35s ease-in-out infinite alternate,
     breathe 15s ease-in-out infinite alternate;
 }
 
-/* --- هاله بنفش ۲ (حرکت رندوم در سمت چپ و پایین) --- */
+/* --- هاله بنفش ۲ --- */
 .glow-bottom-left {
   width: 600px; height: 600px;
-  background-color: rgba(167, 139, 250, 0.4); /* بنفش */
+  background-color: rgba(167, 139, 250, 0.2); 
   bottom: 10%; left: 10%;
   animation: 
     randomMove3 40s ease-in-out infinite alternate,
     breathe 18s ease-in-out infinite alternate;
 }
 
-/* --- هاله سبز ۲ (حرکت رندوم در سمت راست و پایین) --- */
+/* --- هاله سبز ۲ --- */
 .glow-bottom-right {
   width: 550px; height: 550px;
-  background-color: rgba(74, 222, 128, 0.5); /* سبز */
+  background-color: rgba(74, 222, 128, 0.25); 
   bottom: 10%; right: 10%;
   animation: 
     randomMove4 32s ease-in-out infinite alternate,
@@ -109,7 +110,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================================
-   انیمیشن‌های حرکت رندوم (عبور از عرض و ارتفاع صفحه)
+   انیمیشن‌های حرکت رندوم
    ============================================================ */
 @keyframes randomMove1 {
   0% { transform: translate(0, 0) scale(1); }
@@ -147,9 +148,9 @@ img { display: block; max-width: 100%; }
    انیمیشن نفس کشیدن (کم‌رنگ و پررنگ شدن)
    ============================================================ */
 @keyframes breathe {
-  0% { opacity: 0.2; }
-  50% { opacity: 0.7; }
-  100% { opacity: 0.9; }
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.8; }
 }
 
 /* ============================================================
@@ -165,7 +166,7 @@ img { display: block; max-width: 100%; }
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding: 12px 0;
 }
-mm
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -385,6 +386,7 @@ mm
   gap: 10px;
 }
 
+/* انیمیشن گرادیان متحرک روی متن */
 .grad-text {
   background: linear-gradient(90deg, #22c55e, #8b5cf6, #22c55e);
   background-size: 200% auto;
@@ -798,7 +800,8 @@ mm
 @media (prefers-reduced-motion: reduce) {
   .glow,
   .ticker,
-  .pulse-dot {
+  .pulse-dot,
+  .grad-text {
     animation: none !important;
   }
   .glow {
