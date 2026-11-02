@@ -17,10 +17,10 @@
 </head>
 <body>
 
-  <!-- ==================== نشانگر پیشرفت مطالعه (Reading Progress Bar) ==================== -->
+  <!-- ==================== نشانگر پیشرفت مطالعه ==================== -->
   <div class="reading-progress-bar" id="readingProgress"></div>
 
-  <!-- ==================== پس‌زمینه نوری (Glow Background) ==================== -->
+  <!-- ==================== پس‌زمینه نوری ==================== -->
   <div class="global-bg" aria-hidden="true">
     <div class="glow glow-top-left"></div>
     <div class="glow glow-top-right"></div>
@@ -36,10 +36,7 @@
   <!-- ==================== هدر ==================== -->
   <header class="site-header">
     <div class="container header-inner">
-      
-      <!-- بخش راست: لوگو -->
       <a href="#" class="brand">
-        <!-- جایگذاری لوگو: مسیر عکس لوگوی خودت رو اینجا بذار -->
         <img src="https://cdn-icons-png.flaticon.com/512/2972/2972574.png" alt="لوگوی کوله پشتی" class="brand-logo" />
         <div class="brand-text">
           <span class="brand-name">کوله پشتی</span>
@@ -47,11 +44,8 @@
         </div>
       </a>
 
-      <!-- بخش وسط: منو -->
       <nav class="main-nav">
-        <a href="#" class="nav-item active">
-          خانه <i class="fa-solid fa-house"></i>
-        </a>
+        <a href="#" class="nav-item active">خانه <i class="fa-solid fa-house"></i></a>
         <a href="#" class="nav-item">سیاسی</a>
         <a href="#" class="nav-item">اجتماعی</a>
         <a href="#" class="nav-item">فرهنگی</a>
@@ -60,13 +54,10 @@
         <a href="#" class="nav-item">سبک زندگی <i class="fa-solid fa-chevron-down"></i></a>
       </nav>
 
-      <!-- بخش چپ: دکمه‌ها -->
       <div class="header-actions">
-        <!-- دکمه حالت تاریک / روشن -->
         <button class="btn-theme" id="themeToggle" aria-label="تغییر حالت تاریک/روشن">
           <i class="fa-solid fa-moon"></i>
         </button>
-        
         <button class="btn-search" aria-label="جستجو">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -81,8 +72,7 @@
   <div class="container">
     <section class="breaking-bar">
       <div class="breaking-label">
-        <span class="pulse-dot"></span>
-        فوری <i class="fa-solid fa-bolt"></i>
+        <span class="pulse-dot"></span> فوری <i class="fa-solid fa-bolt"></i>
       </div>
       <div class="ticker-wrapper">
         <ul class="ticker" id="ticker">
@@ -98,7 +88,6 @@
   <!-- ==================== بخش اصلی (Hero) ==================== -->
   <main class="hero-section container">
     
-    <!-- تیتر بزرگ -->
     <div class="hero-title-wrap">
       <div class="title-line left-line"></div>
       <h1 class="hero-title">
@@ -107,7 +96,6 @@
       <div class="title-line right-line"></div>
     </div>
 
-    <!-- تب‌های دسته‌بندی -->
     <nav class="category-tabs" id="categoryTabs">
       <button class="tab active" data-cat="all">همه <i class="fa-solid fa-fire"></i></button>
       <button class="tab" data-cat="سیاست">سیاست <i class="fa-solid fa-landmark"></i></button>
@@ -118,14 +106,10 @@
       <button class="tab" data-cat="سبک زندگی">سبک زندگی <i class="fa-solid fa-leaf"></i></button>
     </nav>
 
-    <!-- شبکه اصلی -->
+    <!-- شبکه اصلی Hero -->
     <div class="hero-grid">
-      
-      <!-- ستون خبر اصلی (اسلایدر) -->
       <section class="main-story">
         <div class="main-slider" id="mainSlider">
-          
-          <!-- اسلاید ۱ -->
           <article class="slide active" data-cat="سیاست">
             <img src="https://images.unsplash.com/photo-1590076444617-8e6c7b3e4e41?auto=format&fit=crop&w=1200&q=80" alt="خبر اصلی" class="slide-img" />
             <div class="slide-overlay">
@@ -133,17 +117,13 @@
                 <span class="badge badge-green">سیاست</span>
                 <div style="display:flex; gap:8px; align-items:center;">
                   <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
-                  <!-- دکمه ذخیره خبر در اسلایدر -->
-                  <button class="bookmark-btn" aria-label="ذخیره خبر">
-                    <i class="fa-regular fa-bookmark"></i>
-                  </button>
+                  <button class="bookmark-btn" aria-label="ذخیره خبر"><i class="fa-regular fa-bookmark"></i></button>
                 </div>
               </div>
               <div class="slide-content">
                 <h2 class="slide-title">رهبر انقلاب: جوانان، امید اصلی آینده کشور هستند</h2>
                 <p class="slide-lead">حضرت آیت‌الله خامنه‌ای در دیدار دانشجویان، با تاکید بر نقش جوانان در پیشرفت کشور، فرمودند: آینده از آنِ شماست...</p>
                 <div class="slide-meta-row">
-                  <!-- زمان مطالعه -->
                   <span class="read-time"><i class="fa-solid fa-book-open-reader"></i> ۴ دقیقه مطالعه</span>
                   <a href="#" class="btn-read-more">بخونش <i class="fa-solid fa-arrow-left"></i></a>
                 </div>
@@ -151,7 +131,6 @@
             </div>
           </article>
 
-          <!-- اسلاید ۲ -->
           <article class="slide" data-cat="فناوری">
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="خبر فناوری" class="slide-img" />
             <div class="slide-overlay">
@@ -159,9 +138,7 @@
                 <span class="badge badge-purple">علم و فناوری</span>
                 <div style="display:flex; gap:8px; align-items:center;">
                   <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
-                  <button class="bookmark-btn" aria-label="ذخیره خبر">
-                    <i class="fa-regular fa-bookmark"></i>
-                  </button>
+                  <button class="bookmark-btn" aria-label="ذخیره خبر"><i class="fa-regular fa-bookmark"></i></button>
                 </div>
               </div>
               <div class="slide-content">
@@ -175,7 +152,6 @@
             </div>
           </article>
 
-          <!-- اسلاید ۳ -->
           <article class="slide" data-cat="اقتصاد">
             <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80" alt="خبر اقتصادی" class="slide-img" />
             <div class="slide-overlay">
@@ -183,9 +159,7 @@
                 <span class="badge badge-purple">اقتصاد</span>
                 <div style="display:flex; gap:8px; align-items:center;">
                   <span class="badge badge-red">داغ <i class="fa-solid fa-fire"></i></span>
-                  <button class="bookmark-btn" aria-label="ذخیره خبر">
-                    <i class="fa-regular fa-bookmark"></i>
-                  </button>
+                  <button class="bookmark-btn" aria-label="ذخیره خبر"><i class="fa-regular fa-bookmark"></i></button>
                 </div>
               </div>
               <div class="slide-content">
@@ -198,10 +172,8 @@
               </div>
             </div>
           </article>
-
         </div>
 
-        <!-- کنترل‌های پایین اسلایدر -->
         <div class="slider-controls">
           <div class="slider-counter" id="sliderCounter">
             <span class="counter-current">۰۱</span>
@@ -216,7 +188,6 @@
         </div>
       </section>
 
-      <!-- ستون اخبار فرعی -->
       <aside class="secondary-stories">
         <div class="secondary-head">
           <h2>پیشنهاد ویژه <i class="fa-solid fa-star"></i></h2>
@@ -226,10 +197,7 @@
           <div class="card-img-wrap">
             <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=400&q=80" alt="خبر" />
             <span class="card-tag tag-purple">تکنولوژی</span>
-            <!-- دکمه ذخیره در کارت‌های فرعی -->
-            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر">
-              <i class="fa-regular fa-bookmark"></i>
-            </button>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر"><i class="fa-regular fa-bookmark"></i></button>
           </div>
           <div class="card-content">
             <h3>معرفی گوشی جدید سامسونگ با امکانات شگفت‌انگیز</h3>
@@ -245,9 +213,7 @@
           <div class="card-img-wrap">
             <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=400&q=80" alt="خبر" />
             <span class="card-tag tag-green">ورزش</span>
-            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر">
-              <i class="fa-regular fa-bookmark"></i>
-            </button>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر"><i class="fa-regular fa-bookmark"></i></button>
           </div>
           <div class="card-content">
             <h3>پیروزی مقتدرانه تیم ملی در دیدار دوستانه</h3>
@@ -263,9 +229,7 @@
           <div class="card-img-wrap">
             <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=400&q=80" alt="خبر" />
             <span class="card-tag tag-orange">علم و فناوری</span>
-            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر">
-              <i class="fa-regular fa-bookmark"></i>
-            </button>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره خبر"><i class="fa-regular fa-bookmark"></i></button>
           </div>
           <div class="card-content">
             <h3>ماموریت جدید ناسا به سوی مریخ آغاز شد</h3>
@@ -277,37 +241,320 @@
           </div>
         </article>
       </aside>
-
     </div>
 
-    <!-- نوار آمار پایین -->
+    <!-- نوار آمار -->
     <div class="trust-bar">
       <div class="trust-item">
         <i class="fa-solid fa-bookmark trust-icon"></i>
-        <div class="trust-text">
-          <strong>+۹۸٪</strong>
-          <span>میزان رضایت مخاطبان</span>
-        </div>
+        <div class="trust-text"><strong>+۹۸٪</strong><span>میزان رضایت مخاطبان</span></div>
       </div>
       <div class="trust-divider"></div>
       <div class="trust-item">
         <i class="fa-regular fa-newspaper trust-icon"></i>
-        <div class="trust-text">
-          <strong>+۵.۷K</strong>
-          <span>خبر و گزارش منتشرشده</span>
-        </div>
+        <div class="trust-text"><strong>+۵.۷K</strong><span>خبر و گزارش منتشرشده</span></div>
       </div>
       <div class="trust-divider"></div>
       <div class="trust-item">
         <i class="fa-solid fa-users trust-icon"></i>
-        <div class="trust-text">
-          <strong>+۱.۳M</strong>
-          <span>کاربران فعال ماهانه</span>
-        </div>
+        <div class="trust-text"><strong>+۱.۳M</strong><span>کاربران فعال ماهانه</span></div>
       </div>
     </div>
 
+    <!-- ======================================================== -->
+    <!-- بخش ۱: آخرین اخبار (News Grid)                           -->
+    <!-- ======================================================== -->
+    <section class="news-grid-section">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-newspaper"></i> آخرین اخبار</h2>
+        <a href="#" class="section-link">مشاهده همه <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+
+      <div class="news-grid">
+        <!-- کارت ۱ -->
+        <article class="grid-card">
+          <div class="grid-img-wrap">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=600&q=80" alt="خبر" />
+            <span class="card-tag tag-green">اجتماعی</span>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره"><i class="fa-regular fa-bookmark"></i></button>
+          </div>
+          <div class="grid-content">
+            <h3>طرح جدید شهرداری برای توسعه فضای سبز پایتخت</h3>
+            <div class="card-meta">
+              <span><i class="fa-regular fa-clock"></i> ۱ ساعت پیش</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۳ دقیقه</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت ۲ -->
+        <article class="grid-card">
+          <div class="grid-img-wrap">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="خبر" />
+            <span class="card-tag tag-purple">فرهنگی</span>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره"><i class="fa-regular fa-bookmark"></i></button>
+          </div>
+          <div class="grid-content">
+            <h3>برگزاری جشنواره ملی فیلم کوتاه دانشجویی در اصفهان</h3>
+            <div class="card-meta">
+              <span><i class="fa-regular fa-clock"></i> ۲ ساعت پیش</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۵ دقیقه</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت ۳ -->
+        <article class="grid-card">
+          <div class="grid-img-wrap">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="خبر" />
+            <span class="card-tag tag-orange">فناوری</span>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره"><i class="fa-regular fa-bookmark"></i></button>
+          </div>
+          <div class="grid-content">
+            <h3>پرتاب موفقیت‌آمیز ماهواره جدید ایرانی به فضا</h3>
+            <div class="card-meta">
+              <span><i class="fa-regular fa-clock"></i> ۳ ساعت پیش</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۴ دقیقه</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت ۴ -->
+        <article class="grid-card">
+          <div class="grid-img-wrap">
+            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80" alt="خبر" />
+            <span class="card-tag tag-green">ورزش</span>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره"><i class="fa-regular fa-bookmark"></i></button>
+          </div>
+          <div class="grid-content">
+            <h3>درخشش ورزشکاران ایرانی در مسابقات جهانی دو و میدانی</h3>
+            <div class="card-meta">
+              <span><i class="fa-regular fa-clock"></i> ۵ ساعت پیش</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۲ دقیقه</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت ۵ -->
+        <article class="grid-card">
+          <div class="grid-img-wrap">
+            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80" alt="خبر" />
+            <span class="card-tag tag-purple">اقتصاد</span>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره"><i class="fa-regular fa-bookmark"></i></button>
+          </div>
+          <div class="grid-content">
+            <h3>کاهش نرخ بیکاری در بین جوانان به کمترین میزان ۵ سال گذشته</h3>
+            <div class="card-meta">
+              <span><i class="fa-regular fa-clock"></i> ۶ ساعت پیش</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۴ دقیقه</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت ۶ -->
+        <article class="grid-card">
+          <div class="grid-img-wrap">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80" alt="خبر" />
+            <span class="card-tag tag-green">سیاست</span>
+            <button class="bookmark-btn bookmark-btn--card" aria-label="ذخیره"><i class="fa-regular fa-bookmark"></i></button>
+          </div>
+          <div class="grid-content">
+            <h3>دیدار وزیر امور خارجه با همتایان منطقه‌ای برای گفتگوهای صلح</h3>
+            <div class="card-meta">
+              <span><i class="fa-regular fa-clock"></i> ۸ ساعت پیش</span>
+              <span><i class="fa-solid fa-book-open-reader"></i> ۶ دقیقه</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- بخش ۲: ویژه نوجوانان و جوانان (Youth Zone)                -->
+    <!-- ======================================================== -->
+    <section class="youth-zone">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-fire-flame-curved"></i> ویژه نوجوانان و جوانان</h2>
+        <a href="#" class="section-link">ورود به دنیای جوانان <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+
+      <div class="youth-grid">
+        <article class="youth-card youth-card--large">
+          <div class="youth-img-wrap">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="خبر جوانان" />
+            <div class="youth-overlay">
+              <span class="card-tag tag-purple">سبک زندگی</span>
+              <h3>چطور با استرس کنکور کنار بیایم؟ راهکارهای علمی و عملی</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="youth-card">
+          <div class="youth-img-wrap">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="بازی" />
+            <span class="card-tag tag-orange">بازی</span>
+          </div>
+          <div class="youth-content">
+            <h3>معرفی ۵ بازی موبایل محبوب بین نوجوانان در سال جدید</h3>
+            <div class="card-meta"><span><i class="fa-regular fa-clock"></i> ۲ ساعت پیش</span></div>
+          </div>
+        </article>
+
+        <article class="youth-card">
+          <div class="youth-img-wrap">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80" alt="موسیقی" />
+            <span class="card-tag tag-green">موسیقی</span>
+          </div>
+          <div class="youth-content">
+            <h3>آلبوم‌های برتر پاپ ایرانی که این هفته منتشر شدند</h3>
+            <div class="card-meta"><span><i class="fa-regular fa-clock"></i> ۴ ساعت پیش</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- بخش ۳: ویدیو و پادکست (Multimedia)                       -->
+    <!-- ======================================================== -->
+    <section class="multimedia-section">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-play"></i> ویدیو و پادکست</h2>
+        <a href="#" class="section-link">آرشیو رسانه <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+
+      <div class="media-grid">
+        <article class="media-card">
+          <div class="media-img-wrap">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" alt="ویدیو" />
+            <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+            <span class="media-duration">۰۲:۳۰</span>
+          </div>
+          <h3>گزارش ویدیویی: یک روز با خبرنگاران کوله پشتی</h3>
+        </article>
+
+        <article class="media-card">
+          <div class="media-img-wrap">
+            <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=600&q=80" alt="پادکست" />
+            <div class="play-overlay"><i class="fa-solid fa-microphone"></i></div>
+            <span class="media-duration">۱۵:۴۵</span>
+          </div>
+          <h3>پادکست هفته: گفتگو با جوانان کارآفرین ایرانی</h3>
+        </article>
+
+        <article class="media-card">
+          <div class="media-img-wrap">
+            <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=600&q=80" alt="ویدیو" />
+            <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+            <span class="media-duration">۰۵:۱۲</span>
+          </div>
+          <h3>مستند کوتاه: آشنایی با استارتاپ‌های دانشجویی</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- بخش ۴: تقویم رویدادها و جشنواره‌ها (Events Calendar)       -->
+    <!-- ======================================================== -->
+    <section class="events-section">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-regular fa-calendar-days"></i> رویدادها و جشنواره‌های پیش رو</h2>
+        <a href="#" class="section-link">تقویم کامل <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+
+      <div class="events-timeline">
+        <article class="event-item">
+          <div class="event-date">
+            <span class="event-day">۱۵</span>
+            <span class="event-month">آبان</span>
+          </div>
+          <div class="event-content">
+            <h3>جشنواره بین‌المللی فیلم کوتاه تهران</h3>
+            <p><i class="fa-solid fa-location-dot"></i> تهران، پردیس سینمایی ملت</p>
+            <span class="event-tag">فرهنگی</span>
+          </div>
+        </article>
+
+        <article class="event-item">
+          <div class="event-date">
+            <span class="event-day">۲۲</span>
+            <span class="event-month">آبان</span>
+          </div>
+          <div class="event-content">
+            <h3>مسابقات ملی رباتیک دانشجویی</h3>
+            <p><i class="fa-solid fa-location-dot"></i> اصفهان، دانشگاه صنعتی</p>
+            <span class="event-tag">فناوری</span>
+          </div>
+        </article>
+
+        <article class="event-item">
+          <div class="event-date">
+            <span class="event-day">۰۳</span>
+            <span class="event-month">آذر</span>
+          </div>
+          <div class="event-content">
+            <h3>نمایشگاه بین‌المللی کتاب تهران</h3>
+            <p><i class="fa-solid fa-location-dot"></i> تهران، مصلای امام خمینی</p>
+            <span class="event-tag">فرهنگی</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
   </main>
+
+  <!-- ======================================================== -->
+  <!-- بخش ۵: فوتر کامل (Footer)                                -->
+  <!-- ======================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="brand" style="margin-bottom: 16px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2972/2972574.png" alt="لوگو" class="brand-logo" />
+            <div class="brand-text">
+              <span class="brand-name">کوله پشتی</span>
+              <span class="brand-tag">رسانه نوجوان و جوان</span>
+            </div>
+          </a>
+          <p class="footer-desc">کوله پشتی، صدای نسل جدید؛ جایی برای خبرها، تحلیل‌ها و داستان‌هایی که به تو مربوط‌اند.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>دسترسی سریع</h4>
+          <ul>
+            <li><a href="#">خانه</a></li>
+            <li><a href="#">درباره ما</a></li>
+            <li><a href="#">تماس با ما</a></li>
+            <li><a href="#">تبلیغات</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>دسته‌بندی‌ها</h4>
+          <ul>
+            <li><a href="#">سیاست</a></li>
+            <li><a href="#">اقتصاد</a></li>
+            <li><a href="#">ورزش</a></li>
+            <li><a href="#">فناوری</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>ما را دنبال کنید</h4>
+          <div class="social-links">
+            <a href="#" aria-label="اینستاگرام"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="تلگرام"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" aria-label="توییتر"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="یوتیوب"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>تمامی حقوق برای «کوله پشتی» محفوظ است. © ۱۴۰۳</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
