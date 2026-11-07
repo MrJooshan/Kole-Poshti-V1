@@ -44,7 +44,7 @@
         </div>
       </a>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="mainNav">
         <a href="#" class="nav-item active">خانه <i class="fa-solid fa-house"></i></a>
         <a href="#" class="nav-item">سیاسی</a>
         <a href="#" class="nav-item">اجتماعی</a>
@@ -58,9 +58,19 @@
         <button class="btn-theme" id="themeToggle" aria-label="تغییر حالت تاریک/روشن">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <button class="btn-search" aria-label="جستجو">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        
+        <!-- ==================== کادر جستجوی کشویی ==================== -->
+        <div class="search-container" id="searchContainer">
+          <button class="btn-search" id="searchToggle" aria-label="جستجو">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="text" id="searchInput" class="search-input" placeholder="دنبال چه خبری می‌گردی؟..." autocomplete="off" />
+          <button type="button" class="search-close" id="searchClose" aria-label="بستن جستجو">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- ========================================================= -->
+
         <button class="btn-join">
           عضویت <i class="fa-solid fa-user"></i>
         </button>
@@ -271,7 +281,6 @@
       </div>
 
       <div class="news-grid">
-        <!-- کارت ۱ -->
         <article class="grid-card">
           <div class="grid-img-wrap">
             <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=600&q=80" alt="خبر" />
@@ -287,7 +296,6 @@
           </div>
         </article>
 
-        <!-- کارت ۲ -->
         <article class="grid-card">
           <div class="grid-img-wrap">
             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="خبر" />
@@ -303,7 +311,6 @@
           </div>
         </article>
 
-        <!-- کارت ۳ -->
         <article class="grid-card">
           <div class="grid-img-wrap">
             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="خبر" />
@@ -319,7 +326,6 @@
           </div>
         </article>
 
-        <!-- کارت ۴ -->
         <article class="grid-card">
           <div class="grid-img-wrap">
             <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80" alt="خبر" />
@@ -335,7 +341,6 @@
           </div>
         </article>
 
-        <!-- کارت ۵ -->
         <article class="grid-card">
           <div class="grid-img-wrap">
             <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80" alt="خبر" />
@@ -351,7 +356,6 @@
           </div>
         </article>
 
-        <!-- کارت ۶ -->
         <article class="grid-card">
           <div class="grid-img-wrap">
             <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80" alt="خبر" />

@@ -150,4 +150,81 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ==========================================
+  // ۸. منوی هدر (انتخاب آیتم)
+  // ==========================================
+  const mainNav = document.getElementById("mainNav");
+  if (mainNav) {
+    const navItems = mainNav.querySelectorAll(".nav-item");
+    navItems.forEach(item => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        navItems.forEach(n => n.classList.remove("active"));
+        item.classList.add("active");
+      });
+    });
+  }
+
+  // ==========================================
+  // ۹. جستجوی کشویی (Expandable Search)
+  // ==========================================
+  const searchContainer = document.getElementById("searchContainer");
+  const searchToggle = document.getElementById("searchToggle");
+  const searchClose = document.getElementById("searchClose");
+  const searchInput = document.getElementById("searchInput");
+
+  if (searchContainer && searchToggle && searchInput) {
+    
+    // باز کردن جستجو
+    searchToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      searchContainer.classList.add("open");
+      setTimeout(() => searchInput.focus(), 350);
+    });
+
+    // بستن جستجو
+    const closeSearch = () => {
+      searchContainer.classList.remove("open");
+      searchInput.value = "";
+      searchInput.blur();
+    };
+
+    if (searchClose) {
+      searchClose.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeSearch();
+      });
+    }
+
+    // کلید Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && searchContainer.classList.contains("open")) {
+        closeSearch();
+      }
+    });
+
+    // ارسال جستجو با Enter
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const query = searchInput.value.trim();
+        if (query) {
+          console.log("جستجو برای:", query);
+          alert(`در حال جستجوی: «${query}»\n(نمایشی — به صفحه نتایج متصل می‌شود)`);
+        }
+      }
+    });
+
+    // بستن هنگام کلیک بیرون
+    document.addEventListener("click", (e) => {
+      if (
+        searchContainer.classList.contains("open") &&
+        !searchContainer.contains(e.target)
+      ) {
+        closeSearch();
+      }
+    });
+  }
+
 });
